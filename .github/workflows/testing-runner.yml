@@ -3,12 +3,14 @@ name: Runner test
 on: push
 
 jobs:
-  test:
-    name: Test run
+  image:
+    name: Build image
     runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Environment requirements
+        run: python3.9 -m pip install pychroot lockfile
       - name: Do build
         run: sh build.sh
