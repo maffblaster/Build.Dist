@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Test run of builder
-        run: cd Build.Dist && sh build.sh
+      - name: Do build
+        run: sh build.sh
