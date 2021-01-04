@@ -10,7 +10,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Environment requirements
-        run: python3.9 -m pip install pychroot lockfile
       - name: Do build
         run: sh build.sh
