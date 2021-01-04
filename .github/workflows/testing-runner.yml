@@ -1,12 +1,26 @@
 name: Runner test
 
-on: push
+on:
+  push:
+    branches:
+      - test-runner
 
 jobs:
-  image:
-    name: Build image
+  image-arm64:
+    name: Build image (arm64)
     runs-on: self-hosted
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Do build
+        run: PATH=$HOME/.local/bin:$PATH sh build.sh
+      - name: Cleanup
+        run: rm -rv *
+
+  image-amd64:
+    name: Build image (AMD64)
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
