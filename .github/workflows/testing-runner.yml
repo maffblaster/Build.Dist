@@ -25,4 +25,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Do build
-        run: PATH=$HOME/.local/bin:$PATH sh build.sh
+        run: PROJECT=GentooAMD64 PATH=$HOME/.local/bin:$PATH sh build.sh
