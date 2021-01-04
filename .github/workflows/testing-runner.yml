@@ -11,4 +11,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Do build
-        run: sh build.sh
+        run: PATH=$HOME/.local/bin:$PATH sh build.sh
